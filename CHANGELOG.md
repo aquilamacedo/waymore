@@ -1,5 +1,24 @@
 ## Changelog
 
+- v3.7
+
+  - Changed
+
+    - Fix a big that can occur in some situations where error `ERROR processResponses 1: [Errno 2] No such file or directory: 'testing/responses.tmp'` shown. The required directories weren't being created correctly.
+    - Remove a debug print line I left in!
+    - Remove this script from downloaded responses that's now being included by archive.org:
+      `<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>`
+    - Remove the comment `<!-- End Wayback Rewrite JS Include -->` from the downloaded responses.
+    - Clarify that `-nlf` argument is only relevant to `mode U`.
+
+- v3.6
+
+  - Changed
+
+    - Added `-ko` to the suggestions displayed for Responses when the `-co`/`--check-only` option is used, and there a huge amount of requests to be made.
+    - Remove `-ko` from the suggestion displayed for Urls when the `-co`/`--check-only` option is used, because this doesn't affect this. The `-ko` is applied after the links are retrieved.
+    - Add a statement to `setup.py` to show where `config.yml` is created if it doesn't already exist. This is to help in figuring out Issue #41.
+
 - v3.5
 
   - Changed
